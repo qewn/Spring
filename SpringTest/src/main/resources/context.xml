@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+        <bean class="quoters.TerminatorQuoter" id="terminatorQuoter"> <!--// Створюю бін самостійно-->
+            <property name="message" value="I'll be back"/> <!--// Так як є поле message і сетер то можна надати значення-->
+        </bean>
+
+        <bean class="quoters.InjectRandomIntAnnotationBeanPostProcessor"></bean> <!--Id не потібне так як він н
+    ікуди не буде інжектитись. Тепер Spring знає про таку анотацію-->
+
+    </beans>
