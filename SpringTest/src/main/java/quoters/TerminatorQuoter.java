@@ -10,6 +10,10 @@ import javax.annotation.PostConstruct;
 @DeprecatedClass(newImpl = T1000.class) // Заміна класу на новий
 public class TerminatorQuoter implements Quoter {
 
+    public void setRepeat(int repeat) {
+        this.repeat = repeat;
+    }
+
     @InjectRandomInt(min = 2, max = 7) // Створюю власну анотацію
     private int repeat;
     private String message;
