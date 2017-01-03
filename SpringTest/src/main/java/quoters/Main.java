@@ -9,10 +9,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("context.xml"); // Цей клас сканується і аналізується
         // XmlBeanDefinitionReader-ом
-        while (true) {
-            Thread.sleep(1000);
-            context.getBean(Quoter.class).sayQuote(); // Витягую з контексту клас і зразу його метод.
-        }
+        context.getBean(Quoter.class).sayQuote(); // Витягую з контексту клас і зразу його метод.
     }
 }
                                                   /* Робота Spring */

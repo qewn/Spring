@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
  */
 
 @Profiling // Анотація що профілює всі методи даного класу(виводить в лог час роботи його методів)
+@DeprecatedClass(newImpl = T1000.class) // Заміна класу на новий
 public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 2, max = 7) // Створюю власну анотацію
@@ -17,7 +18,7 @@ public class TerminatorQuoter implements Quoter {
     // працювати не буде доти поки не буде обявлений бін який знає про цю анотацію. -- Двухфазовий конструктор
     public void init() {
         System.out.println("Phase 2");
-        System.out.println(repeat);
+        System.out.println("The random number of repeat = " + repeat);
     }
 
     public TerminatorQuoter() {
@@ -28,9 +29,11 @@ public class TerminatorQuoter implements Quoter {
         this.message = message;
     }
 
+    //@PostConstruct
     public void sayQuote() {
         for (int i = 0; i < repeat; i++) {
             System.out.println("message = " + message);
         }
     }
 }
+// --- Трьохфазовий конструктор можна реалізувати через Context Listener...

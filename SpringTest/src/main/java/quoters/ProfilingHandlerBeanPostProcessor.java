@@ -51,7 +51,7 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
                                 Object retVal = method.invoke(bean, objects);
                                 long after = System.nanoTime();
                                 System.out.println("Done");
-                                System.out.println(after - before);
+                                System.out.println("Method was working " + (after - before) + " nano seconds");
                                 return retVal;
                             } else { // Якщо виключений то відповідно вертається все як і було. Проксі який просто нічого не робить
                                 return method.invoke(bean, objects);
@@ -63,6 +63,7 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
     }
 }
 
-/* Статичний метод який приймає оригінальний класс і замінює на новий який він же сам згенерую на льоту. Приймає 3 параметра: КлассЛоадер
- * за допомогою якого він клас який прийде загрузиться в систему, клас який приймає інтерефейси які імплементовані в оригінальному і
- * перейдуть в новий та Invocation Handler який інкапсулю в собі логіку яка буде пересена в клас який згенерується на льоту */
+/* Статичний метод який приймає оригінальний класс і замінює на новий який він же сам згенерую на льоту. Приймає 3 параметра:
+ * КлассЛоадер за допомогою якого він клас який прийде загрузиться в систему, клас який приймає інтерефейси які імплементовані в
+ * оригінальному і перейдуть в новий та Invocation Handler який інкапсулю в собі логіку яка буде пересена в клас який
+ * згенерується на льоту */
