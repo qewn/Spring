@@ -12,7 +12,7 @@ public class PropertyFileApplicationContext extends GenericApplicationContext {
         PropertiesBeanDefinitionReader reader =  new PropertiesBeanDefinitionReader(this); // Приймає той контекст для якого він буде реєструвати його біни коли він їх знайже коли запуститься
         int i = reader.loadBeanDefinitions(fileName); // Загрузити всі біни які він там знайде а ще він вертає кількість знайдених бінів
         System.out.println("Found " + i + " beans");
-        refresh();
+        refresh(); // Щоб завершити аналіз контекст вкінці завжди має рефрешнутись
     }
 
     public static void main(String[] args) {

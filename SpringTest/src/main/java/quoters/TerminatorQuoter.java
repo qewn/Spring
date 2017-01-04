@@ -1,5 +1,9 @@
 package quoters;
 
+import quoters.Anotations.DeprecatedClass;
+import quoters.Anotations.InjectRandomInt;
+import quoters.Anotations.Profiling;
+
 import javax.annotation.PostConstruct;
 
 /**
@@ -33,7 +37,7 @@ public class TerminatorQuoter implements Quoter {
         this.message = message;
     }
 
-    //@PostConstruct
+    @PostConstruct
     public void sayQuote() {
         for (int i = 0; i < repeat; i++) {
             System.out.println("message = " + message);

@@ -4,6 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.cglib.proxy.InvocationHandler;
 import org.springframework.cglib.proxy.Proxy;
+import quoters.Anotations.Profiling;
 
 import javax.management.*;
 import java.lang.management.ManagementFactory;
